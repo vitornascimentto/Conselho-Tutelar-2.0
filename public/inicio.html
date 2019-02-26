@@ -64,9 +64,9 @@
         </ul>
         <ul class="nav navbar-nav pull-right">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" id="sair">
               <b>
-                <gfont>Sair </gfont>
+                <gfont> Sair </gfont>
               </b>
             </a>
           </li>
@@ -152,6 +152,18 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+  <script src="JS/firebase.js"></script>
+  <script src="JS/user.js"></script>
+  <script>
+    document.getElementById('sair').addEventListener('click', () => {
+      var user = new User(DB);
+      user.logout();
+      user.check();
+    });
+  </script>
+  
 
 </body>
 
