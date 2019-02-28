@@ -26,4 +26,18 @@ class User {
         this.DB.auth().signOut();
     }
 
+    recovery(emailAddress){
+        var auth = firebase.auth();
+        //var emailAddress = "user@example.com";
+
+        auth.sendPasswordResetEmail(emailAddress).then(function() {
+            // Email sent.
+            alert('Email enviado com sucesso!')
+            window.location = './index.html';
+        }).catch(function(error) {
+            // An error happened.
+            alert('Esse email não está cadastrado!')
+        });
+    }
+
 }

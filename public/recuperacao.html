@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="Imagens/favicon.png" sizes="32x32" />
   <link rel="stylesheet" href="https://sethusenthil.github.io/Product-Sans/font/font.css">
 
-  <title>Entrar</title>
+  <title>Recuperação de Senha</title>
 </head>
 
 <body>
@@ -26,25 +26,18 @@
     <gfont>
       <div class="shadow card text-white bg-danger mb-3">
         <div class="card-body">
-          Por favor, faça login. 
+          Por favor, escreva seu email. 
         </div>
       </div>
       <div class="form">
+        
         <form class="login-form">
           <input type="email" placeholder="E-mail" id="email" />
-          <input type="password" placeholder="Senha" id="senha"/>
         </form>
 
         <button id='button'>
-            Entrar
+            Enviar e-mail
         </button>
-
-        <p class="message">
-          Esqueceu a senha?
-          <a href="recuperacao.html">
-            Clique aqui 
-          </a>
-        </p>
 
       </div>
    </gfont>
@@ -75,9 +68,8 @@
 
   <script> 
     var user = new User(DB);
-    user.check();
     document.getElementById('button').addEventListener('click', () => {
-      user.login(document.getElementById('email').value, document.getElementById('senha').value);
+      user.recovery(document.getElementById('email').value);
     });
   </script>
 
