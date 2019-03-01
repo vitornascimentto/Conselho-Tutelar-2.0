@@ -7,6 +7,8 @@ class User {
     login(email, senha){
         this.DB.auth().signInWithEmailAndPassword(email, senha).then ((result) => {
             console.log(result);
+        }).catch((result) => {
+            alert(result.message)
         });
     }
 
@@ -28,7 +30,6 @@ class User {
 
     recovery(emailAddress){
         var auth = firebase.auth();
-        //var emailAddress = "user@example.com";
 
         auth.sendPasswordResetEmail(emailAddress).then(function() {
             // Email sent.
