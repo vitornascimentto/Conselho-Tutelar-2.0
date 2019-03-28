@@ -157,6 +157,9 @@
                   
               </div>
             </div>
+            <div align="center">
+              <a id="proximo" href="atendimento02.html" class="btn btn-success btn-sm active" role="button" aria-pressed="true"> Próximo </a>
+            </div>
           </form>
         </div>
       </div>
@@ -181,6 +184,31 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
+
+  <script>
+    document.getElementById('proximo').addEventListener('click', () => {
+      localStorage.setItem('numeroRegistro', document.getElementById('entradaNumeroRegistro').value);
+      localStorage.setItem('dataAtendimento', document.getElementById('dataAtendimento').value);
+    
+      localStorage.setItem('name', document.getElementById('entradaNome').value);
+      localStorage.setItem('dataNascimento', document.getElementById('entradaDataNascimento').value);
+      
+      // var sexoCria;
+
+      // ( document.getElementById('tipoMasculino') )
+          // ? sexoCria = 'Masculino'
+          // : sexoCria = 'Feminino'
+      
+      //localStorage.setItem('sexo', document.getElementById('sexo').value);
+
+      localStorage.setItem('pai', document.getElementById('entradaNomePai').value);
+      localStorage.setItem('mae', document.getElementById('entradaNomeMãe').value);
+      localStorage.setItem('outros', document.getElementById('entradaOutroResponsavel').value);
+
+      alert(localStorage.getItem('name'));
+    });
+  
+  </script>
 
 </body>
 
